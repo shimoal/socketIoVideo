@@ -16,6 +16,8 @@ io.on('connection', function(socket) {
   console.log('A user connected!');
   numUsers++;
 
+  socket.join("room-" + roomNo);
+
 
   socket.on('sendDescription', function(data) {
     socket.broadcast.emit('description', data);
@@ -27,14 +29,13 @@ io.on('connection', function(socket) {
   });
 
 
-  
-
-
   io.sockets.in("room-"+roomNo).emit('newUser', numUsers);
 
   socket.on('disconnect', function() {
-    console.log('A user disconnected');
     numUsers--;
+    socket.leave("room-" + roomNo);
+    io.sockets.in("room-"+roomNo).emit('newUser', numUsers);
+    console.log('A user disconnected');
   })
 })
 
