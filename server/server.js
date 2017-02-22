@@ -8,6 +8,8 @@ var roomNo = 1;
 var user1;
 var user2;
 
+var port = process.env.PORT || 3000;
+
 app.use(express.static(__dirname + '/../public'));
 
 io.on('connection', function(socket) {
@@ -38,6 +40,6 @@ io.on('connection', function(socket) {
   })
 })
 
-http.listen(3000, function() {
-  console.log('listening on port 3000');
+http.listen(port, function() {
+  console.log('listening on port ' + port);
 })
