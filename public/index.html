@@ -5,30 +5,29 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="lib/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://simplewebrtc.com/latest-v2.js"></script>
 
   <body>
     <h1>Chat here!</h1>
 
-    <div id="wrapper">
 
-      <!-- display own video -->
+
       <p>There are <span id="numOfUsers"></span> users in this room.</p>
-      <h1>My name: <span id="myName"></span></h1>
+
       <h2> My video </h2>
       <div id="my-camera">
-        <video width="200" height="200" autoplay></video>
+        <video  width="200" height="200" autoplay></video>
       </div>
 
       <button id="start-call">Start call</button>
 
-      <h1> My partner's name: <span id="peerName"></span></h1>
       <h2> My partner's video </h2>
-      <div id="peer-camera" >
-        <video width="400" height="400" autoplay></video>
+      <div id="peer-camera">
+        <video  width="400" height="400" autoplay></video>
       </div>
 
 
-    </div>
+    </div> 
     <script src="index.js"></script>
       </body>
 </html>
