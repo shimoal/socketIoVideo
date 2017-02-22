@@ -18,18 +18,14 @@ io.on('connection', function(socket) {
 
 
   socket.on('call', function(name) {
-    console.log('inside call');
-
     socket.broadcast.emit('receiveCall', name);
   });
 
   socket.on('answer', function(name) {
-    console.log('inside answer');
     socket.broadcast.emit('receiveAnswer', name);
   })
 
   socket.on('sendCall', function(name) {
-    console.log('inside receiveCall', name);
     socket.emit('answerCall', name);
   })
 

@@ -26,7 +26,6 @@ socket.on('receiveCall', function(data) {
 });
 
 socket.on('receiveAnswer', function(data) {
-  console.log('inside recieve Answer on client');
   $('#peerName').html(data);
 })
 
